@@ -14,6 +14,7 @@ stages:
   - deploy
 
 unit_test:
+  image: lorisleiva/laravel-docker:latest
   stage: test
   tags:
     - josua
