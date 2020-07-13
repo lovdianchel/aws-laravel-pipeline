@@ -24,7 +24,7 @@
 @task('run_composer')
     echo "Starting deployment ({{ $release }})"
     cd {{ $new_release_dir }}
-    composer install --prefer-dist --no-scripts -q -o
+    composer install --prefer-dist --no-scripts -q -o --ignore-platform-reqs
     echo 'Done'
 @endtask
 
