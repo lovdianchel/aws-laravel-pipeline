@@ -20,7 +20,7 @@ unit_test:
   script:
     - composer install --ignore-platform-reqs --no-ansi --no-interaction --no-progress --no-scripts
     - cp .env.example .env
-    - php artisan key:generate
+#    - php artisan key:generate
     - php artisan migrate
     - vendor/bin/phpunit
 
