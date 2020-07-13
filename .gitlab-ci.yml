@@ -29,7 +29,8 @@ deploy_staging:
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$SPK_AWS")
     - mkdir -p ~/.ssh
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'    - ~/.composer/vendor/bin/envoy run deploy
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - ~/.composer/vendor/bin/envoy run deploy
   environment:
     name: staging
     url: http://34.203.222.104
