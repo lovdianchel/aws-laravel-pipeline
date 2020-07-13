@@ -11,7 +11,9 @@ variables:
 
 stages:
   - test
-  - deployunit_test:
+  - deploy
+
+unit_test:
   stage: test
   script:
     - composer install
