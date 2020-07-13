@@ -15,6 +15,8 @@ stages:
 
 unit_test:
   stage: test
+  tags:
+    - josua
   script:
     - composer install
     - cp .env.example .env
@@ -24,6 +26,8 @@ unit_test:
 
 deploy_staging:
   stage: deploy
+  tags:
+    - josua
   script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
