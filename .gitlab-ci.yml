@@ -38,7 +38,7 @@ deploy_staging:
     - ssh-add <(echo "$SPK_AWS")
     - mkdir -p ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-    - composer global require laravel/envoy
+    - composer global require "laravel/envoy=~1.0"
     - ~/.composer/vendor/bin/envoy run deploy
   environment:
     name: staging
