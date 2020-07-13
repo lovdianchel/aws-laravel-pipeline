@@ -28,6 +28,7 @@ unit_test:
     - vendor/bin/phpunit
 
 deploy_staging:
+  image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
   stage: deploy
   tags:
     - josua
