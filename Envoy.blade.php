@@ -5,7 +5,7 @@
     $releases_dir = '/var/www/releases';
     $app_dir = '/var/www/';
     //$release = date('dmYHis');
-    $release = $CI_COMMIT_SHORT_SHA 
+    $release = var_dump(getenv('CI_COMMIT_SHORT_SHA'));
     $new_release_dir = $releases_dir .'/'. $release;
 @endsetup
 
