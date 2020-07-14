@@ -42,6 +42,6 @@ deploy_staging:
   environment:
     name: staging
     url: http://34.203.222.104
-  when: manual
+#  when: manual
   only:
     - master
