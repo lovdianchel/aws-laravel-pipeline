@@ -13,6 +13,7 @@
     clone_repository
     run_composer
     update_symlinks
+    remove_directory
 @endstory
 
 @task('clone_repository')
