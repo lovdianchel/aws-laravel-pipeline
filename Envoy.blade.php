@@ -4,7 +4,8 @@
     $repository = 'git@gitlab.com:pt-dot-internal/internship/laravel-pipeline.git';
     $releases_dir = '/var/www/releases';
     $app_dir = '/var/www/';
-    $release = date('dmYHis');
+    //$release = date('dmYHis');
+    $release = $CI_COMMIT_SHORT_SHA 
     $new_release_dir = $releases_dir .'/'. $release;
 @endsetup
 
