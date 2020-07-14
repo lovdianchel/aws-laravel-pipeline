@@ -48,5 +48,5 @@
 @task('remove_directory')
    echo "Checking if release directory more than 5..."
    dir_count=$(ls -t | wc -l)
-   if (($dir_count > 5)); then rm -rf $(ls -t | tail -n); echo "Removing directory"; else "Release directory is less than 5, do nothing"; fi
+   if (($dir_count > 5)); then rm -rf $(ls -t | tail -n); echo "Removing directory"; else echo "Release directory is less than 5, do nothing"; fi
 @endtask
