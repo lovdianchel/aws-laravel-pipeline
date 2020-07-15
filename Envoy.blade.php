@@ -50,6 +50,7 @@
    cd /var/www/releases/
    dir_count=$(ls -t | wc -l)
    if (($dir_count > 5)); then
+       echo "Release directory is more than 5"
        echo "Removing directory..."
        rm -rf $(ls -t | tail -n $( expr $dir_count - 5 ))
        echo "Done"
