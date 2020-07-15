@@ -51,7 +51,7 @@
    dir_count=$(ls -t | wc -l)
    if (($dir_count > 5)); then
        echo "Removing directory..."
-       rm -rf $(ls -t | tail -n1)
+       rm -rf $(ls -t | tail -n $( expr $dir_count - 5 ))
        echo "Done"
    else
        echo "Release directory is less than or equal 5, do nothing..."
