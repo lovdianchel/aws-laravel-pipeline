@@ -46,15 +46,15 @@
 @endtask
 
 @task('remove_directory')
-   sudo apt install bc -y
    echo "Checking if release directory more than 5..."
    cd /var/www/releases/
    dir_count=$(ls -t | wc -l)
    if (($dir_count > 5)); then
        echo "Removing directory..."
-       rm -rf $(ls -t | tail -n $( echo "$dir_count-5" | bc ))
+       rm -rf $(ls -t | tail -n1)
        echo "Done"
    else
        echo "Release directory is less than or equal 5, do nothing..."
+       echo "Done"
    fi
 @endtask
