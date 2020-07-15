@@ -1,5 +1,5 @@
-# image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
-image: lorisleiva/laravel-docker:latest
+image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
+#image: lorisleiva/laravel-docker:latest
 
 services:
   - mysql:5.7
@@ -15,7 +15,7 @@ stages:
   - deploy
 
 unit_test:
-#  image: lorisleiva/laravel-docker:latest
+  image: lorisleiva/laravel-docker:latest
   stage: test
   tags:
     - josua
@@ -28,7 +28,7 @@ unit_test:
     - vendor/bin/phpunit
 
 deploy_staging:
-  image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
+#  image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
   stage: deploy
   tags:
     - josua
@@ -42,6 +42,6 @@ deploy_staging:
   environment:
     name: staging
     url: http://34.203.222.104
-#  when: manual
+  when: manual
   only:
     - master
