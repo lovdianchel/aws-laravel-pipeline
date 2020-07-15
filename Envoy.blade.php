@@ -46,6 +46,7 @@
 @endtask
 
 @task('remove_directory')
+   apt install bc -y
    echo "Checking if release directory more than 5..."
    cd /var/www/releases/
    dir_count=$(ls -t | wc -l)
