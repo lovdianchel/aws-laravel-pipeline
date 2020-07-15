@@ -1,5 +1,4 @@
 image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
-#image: lorisleiva/laravel-docker:latest
 
 services:
   - mysql:5.7
@@ -20,7 +19,6 @@ unit_test:
   tags:
     - josua
   script:
-#    - composer install --ignore-platform-reqs
     - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
     - cp .env.example .env
     - php artisan key:generate
@@ -28,7 +26,6 @@ unit_test:
     - vendor/bin/phpunit
 
 deploy_staging:
-#  image: registry.gitlab.com/pt-dot-internal/internship/laravel-pipeline:latest
   stage: deploy
   tags:
     - josua
